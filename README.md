@@ -139,6 +139,17 @@
 ### 调试
 先按照上文配置环境，然后用 `Visual Studio 2022` 打开 `simple-openl-graphic-tool.sln`，源码文件为 `simple-openl-graphic-tool.cpp`
 
+调试前，需要把以下文件从生成中排除，方法如下图：
+
+```txt
+│  lineClipping.cpp
+│  lineClipping.h
+│  onMidPointEllispe.cpp
+│  onMidPointEllispe.h
+```
+
+![](./readme_img/conf1.png)
+![](./readme_img/conf2.png)
 
 # 开源许可证
 
