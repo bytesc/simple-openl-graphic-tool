@@ -143,7 +143,8 @@ void menuFunc(int value) {
     if (value == 2) {
         iKeyPointNum = 0;
         menuStatus = 2;
-        mode = "Line press \"P\" to start";
+        mode = "Line press \"P\" to start (should input in ENGLISH rather than CHINESE)";
+        glutPostRedisplay();
     }
     if (value == 99) {
         ellipses.clear();
@@ -159,14 +160,14 @@ void keyboardFunc(unsigned char key, int x, int y) {
         if (key == 'p' || key == 'P') {
             if (iKeyPointNum == 0) {
                 iKeyPointNum = 1;
-                mode = "Left click to add a point; press \"E\" to finish";
+                mode = "Left click and Draw to add a point; press \"E\" to finish";
             }
         }
         if (key == 'e' || key == 'E') {
             if (iKeyPointNum == 1) {
                 iKeyPointNum = 2;
                 endPoint.x = 0; endPoint.y = 0; startPoint.x = 0; startPoint.y = 0;
-                mode = "Liang-Barsky";
+                mode = "Left click and Draw to use Liang-Barsky clipping";
             }
         }
         if (key == 'c' || key == 'C') {
@@ -180,7 +181,7 @@ void keyboardFunc(unsigned char key, int x, int y) {
                     line.start = v[0];
                     line.end = v[1];
                 }
-                mode = "Liang-Barsky";
+                mode = "left click and draw to use Liang-Barsky clipping";
             }
         }
     }

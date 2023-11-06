@@ -1,7 +1,7 @@
 #include <vector>
 #include <windows.h>  
 #include <GL/glut.h>
-using namespace std;
+//using namespace std;
 //typedef struct Point {
 //	int x, y;
 //	Point(int a = 0, int b = 0)	{
