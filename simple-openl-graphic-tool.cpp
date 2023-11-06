@@ -136,6 +136,7 @@ void display() {
 
 void menuFunc(int value) {
     startPoint.x = endPoint.x = startPoint.y = endPoint.y = 0;
+    xKey = yKey = 0;
     if (value == 1) {
         menuStatus = 1;
         mode = "Ellipses";
