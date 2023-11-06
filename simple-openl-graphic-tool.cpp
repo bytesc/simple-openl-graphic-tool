@@ -4,6 +4,7 @@
 # define M_PI 3.14159
 
 #include"onMidPointEllispe.cpp"
+#include"lineClipping.cpp"
 
 
 struct Ellipse {
@@ -72,6 +73,15 @@ void drawBaseRectangle(int x1, int y1, int x2, int y2) {
     glEnd();
 }
 
+void drawRect(int x1, int y1, int x2, int y2) {
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glBegin(GL_LINE_LOOP);
+    glVertex2i(x1, y1);
+    glVertex2i(x2, y1);
+    glVertex2i(x2, y2);
+    glVertex2i(x1, y2);
+    glEnd();
+}
 
 void drawLine(int x1, int y1, int x2, int y2) {
     glColor3f(globalColor.r, globalColor.g, globalColor.b);
@@ -109,8 +119,13 @@ void display() {
     }
 
     if (menuStatus == 2) {
-        if (drawing) {
-            drawLine(startPoint.x, startPoint.y, xKey, yKey);
+        if (iKeyPointNum == 1) {
+            if (drawing) {
+                drawLine(startPoint.x, startPoint.y, xKey, yKey);
+            }
+        }
+        if (iKeyPointNum == 2) {
+            drawRect(startPoint.x, startPoint.y, endPoint.x, endPoint.y);
         }
     }
     
@@ -150,6 +165,21 @@ void keyboardFunc(unsigned char key, int x, int y) {
         if (key == 'e' || key == 'E') {
             if (iKeyPointNum == 1) {
                 iKeyPointNum = 2;
+                endPoint.x = 0; endPoint.y = 0; startPoint.x = 0; startPoint.y = 0;
+                mode = "Liang-Barsky";
+            }
+        }
+        if (key == 'c' || key == 'C') {
+            if (iKeyPointNum == 2) {
+                rect r{ (float)startPoint.x ,(float)startPoint.y,(float)endPoint.x , (float)endPoint.y };
+                for (auto& line : lines) {
+                    std::vector<point> v;
+                    v.push_back(line.start);
+                    v.push_back(line.end);
+                    Line_Clipping(v, r);
+                    line.start = v[0];
+                    line.end = v[1];
+                }
                 mode = "Liang-Barsky";
             }
         }
@@ -205,6 +235,18 @@ void mouse(int button, int state, int x, int y) {
                 startPoint.x = xKey; startPoint.y = yKey;
                 endPoint.x = 0; endPoint.y = 0;
                 xKey = 0; yKey = 0;
+                glutPostRedisplay();
+            }
+        }
+        if (iKeyPointNum == 2) {
+            if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
+                drawing = true;
+                startPoint.x = endPoint.x = x;
+                startPoint.y = endPoint.y = y;
+            }
+            else if (button == GLUT_LEFT_BUTTON && state == GLUT_UP && drawing) {
+                drawing = false;
+                mode = "press \"C\" to cut";
                 glutPostRedisplay();
             }
         }

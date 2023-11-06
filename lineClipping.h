@@ -14,10 +14,10 @@ typedef struct Point {
 //æÿ–Œ¿‡–Õrect
 typedef struct Rectangle{
 	float w_xmin,w_ymin;
-	float w_xmax,w_yman; 
+	float w_xmax,w_ymax; 
 	Rectangle(float xmin = 0.0, float ymin = 0.0,float xmax=0.0,float ymax=0.0){
 		w_xmin = xmin;	w_ymin = ymin;	
-		w_xmax = xmax;	w_yman = ymax;
+		w_xmax = xmax;	w_ymax = ymax;
 	}
 }rect;
 int Clip_Top(float p,float q,float &umax,float &umin);

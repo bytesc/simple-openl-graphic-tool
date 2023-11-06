@@ -40,7 +40,7 @@ void Line_Clipping(vector<point> &points,rect & winRect){
 		if (Clip_Top(dx,winRect.w_xmax-p1.x, umax,umin)) //右边界
 			//比较下、上边界，获得最小的umin
 			if (Clip_Top(-dy,p1.y- winRect.w_ymin, umax,umin)) //下边界
-				if (Clip_Top(dy,winRect.w_yman-p1.y, umax,umin)) //上边界
+				if (Clip_Top(dy,winRect.w_ymax-p1.y, umax,umin)) //上边界
 				{//求裁剪后直线新端点	
 					p1.x=(int)(p.x+umax*dx);
 					p1.y=(int)(p.y+umax*dy);
