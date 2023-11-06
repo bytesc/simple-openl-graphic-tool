@@ -20,8 +20,8 @@ D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\onMidPointEll
 D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(49,56): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
 D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(49,41): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
 D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(49,26): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(76,56): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(76,41): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(76,26): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(119,56): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(77,56): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(77,41): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(77,26): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(117,56): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
   simple-openl-graphic-tool.vcxproj -> D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\x64\Debug\simple-openl-graphic-tool.exe

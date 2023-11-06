@@ -52,7 +52,7 @@ void drawEllipse(int x, int y, int a, int b) {
     glTranslated(-x , -y , 0);
 }
 
-void drawRectangle(int x1, int y1, int x2, int y2) {
+void drawBaseRectangle(int x1, int y1, int x2, int y2) {
     glColor3f(0.0f, 0.0f, 0.0f);
     glBegin(GL_LINE_LOOP);
     glVertex2i(x1, y1);
@@ -72,9 +72,10 @@ void drawRectangle(int x1, int y1, int x2, int y2) {
     glEnd();
 }
 
+
 void drawLine(int x1, int y1, int x2, int y2) {
     glColor3f(globalColor.r, globalColor.g, globalColor.b);
-    glBegin(GL_LINE_LOOP);
+    glBegin(GL_LINE_STRIP);
     glVertex2i(x1, y1);
     glVertex2i(x2, y2);
     glEnd();
@@ -88,7 +89,7 @@ void display() {
         if (drawing) {
             int width = abs(endPoint.x - startPoint.x);
             int height = abs(endPoint.y - startPoint.y);
-            drawRectangle(startPoint.x, startPoint.y, endPoint.x, endPoint.y);
+            drawBaseRectangle(startPoint.x, startPoint.y, endPoint.x, endPoint.y);
             drawEllipse((startPoint.x + endPoint.x) / 2, (startPoint.y + endPoint.y) / 2, width / 2, height / 2);
         }
 
@@ -103,19 +104,16 @@ void display() {
         drawEllipse(ellipse.center.x, ellipse.center.y, ellipse.a, ellipse.b);
     }
 
+    for (const auto& line : lines) {
+        drawLine(line.start.x, line.start.y, line.end.x, line.end.y);
+    }
+
     if (menuStatus == 2) {
         if (drawing) {
             drawLine(startPoint.x, startPoint.y, xKey, yKey);
         }
-        if (!drawing) {
-            drawLine(startPoint.x, startPoint.y, endPoint.x, endPoint.y);
-        }
     }
     
-    for (const auto& line : lines) {
-        drawLine(line.start.x,line.start.y,line.end.x,line.end.y);
-    }
-
     renderBitmapString(10, glutGet(GLUT_WINDOW_HEIGHT) - 20, GLUT_BITMAP_HELVETICA_18, mode.c_str());
 
     glutSwapBuffers();
@@ -128,8 +126,9 @@ void menuFunc(int value) {
         mode = "Ellipses";
     }
     if (value == 2) {
+        iKeyPointNum = 0;
         menuStatus = 2;
-        mode = "Line press \"p\" to start";
+        mode = "Line press \"P\" to start";
     }
     if (value == 99) {
         ellipses.clear();
@@ -145,15 +144,13 @@ void keyboardFunc(unsigned char key, int x, int y) {
         if (key == 'p' || key == 'P') {
             if (iKeyPointNum == 0) {
                 iKeyPointNum = 1;
-                mode = "Left click to add a point";
+                mode = "Left click to add a point; press \"E\" to finish";
             }
-            else if (iKeyPointNum == 1) {
+        }
+        if (key == 'e' || key == 'E') {
+            if (iKeyPointNum == 1) {
                 iKeyPointNum = 2;
-                mode = "Select the ending point of the line segment";
-            }
-            else if (iKeyPointNum == 2) {
-                iKeyPointNum = 0;
-                mode = "Right click to select a graph type";
+                mode = "Liang-Barsky";
             }
         }
     }
@@ -188,21 +185,28 @@ void mouse(int button, int state, int x, int y) {
         }
     }
     
-    if (menuStatus == 2) {
-        if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-            drawing = true;
-            startPoint.x = endPoint.x = x;
-            startPoint.y = endPoint.y = y;
-            xKey = x; yKey = y;
-        }
-        else if (button == GLUT_LEFT_BUTTON && state == GLUT_UP) {
-            drawing = false;
-            point start = point(startPoint.x, startPoint.y);
-            point end = point(endPoint.x, endPoint.y);
-            lines.push_back({ start,end });
-            endPoint.x = 0; endPoint.y = 0; startPoint.x = 0; startPoint.y = 0;
-            xKey = 0; yKey = 0;
-            glutPostRedisplay();
+    if (menuStatus == 2 ) {
+        if (iKeyPointNum == 1) {
+            if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
+                drawing = true;
+                endPoint.x = x;
+                endPoint.y = y;
+                xKey = x; yKey = y;
+                if (lines.size() == 0) {
+                    startPoint.x = x; startPoint.y = y;
+                    lines.push_back({ x,y });
+                }
+            }
+            else if (button == GLUT_LEFT_BUTTON && state == GLUT_UP && drawing) {
+                drawing = false;
+                point end = point(xKey, yKey);
+                point start = point(startPoint.x, startPoint.y);
+                lines.push_back({start,end});
+                startPoint.x = xKey; startPoint.y = yKey;
+                endPoint.x = 0; endPoint.y = 0;
+                xKey = 0; yKey = 0;
+                glutPostRedisplay();
+            }
         }
     }
 }
