@@ -14,7 +14,8 @@ void renderBitmapString(float x, float y, void* font, const char* string) {
 }
 
 struct Ellipse {
-    int x, y, a, b;
+    Point center;
+    int a, b;
 };
 
 std::vector<struct Ellipse> ellipses;
@@ -28,9 +29,13 @@ struct Color globalColor;
 
 std::string mode = "Right click to select a graph type";
 
-int startX, startY, endX, endY;
+Point startPoint, endPoint;
+
 bool drawing = false;
 int menuStatus = 0;
+
+int iKeyPointNum = 0;
+int xKey = 0, yKey = 0;
 
 void drawEllipse(int x, int y, int a, int b) {
     glColor3f(globalColor.r, globalColor.g, globalColor.b);
@@ -64,21 +69,23 @@ void display() {
     glColor3f(0.0f, 0.0f, 0.0f);
 
     if (drawing && (menuStatus == 1)) {
-        int width = abs(endX - startX);
-        int height = abs(endY - startY);
-        drawRectangle(startX, startY, endX, endY);
-        drawEllipse((startX + endX) / 2, (startY + endY) / 2, width / 2, height / 2);
+        int width = abs(endPoint.x - startPoint.x);
+        int height = abs(endPoint.y - startPoint.y);
+        drawRectangle(startPoint.x, startPoint.y, endPoint.x, endPoint.y);
+        drawEllipse((startPoint.x + endPoint.x) / 2, (startPoint.y + endPoint.y) / 2, width / 2, height / 2);
     }
 
     if (!drawing && (menuStatus == 1)) {
-        int width = abs(endX - startX);
-        int height = abs(endY - startY);
-        drawEllipse((startX + endX) / 2, (startY + endY) / 2, width / 2, height / 2);
+        int width = abs(endPoint.x - startPoint.x);
+        int height = abs(endPoint.y - startPoint.y);
+        drawEllipse((startPoint.x + endPoint.x) / 2, (startPoint.y + endPoint.y) / 2, width / 2, height / 2);
     }
 
     for (const auto& ellipse : ellipses) {
-        drawEllipse(ellipse.x, ellipse.y, ellipse.a, ellipse.b);
+        drawEllipse(ellipse.center.x, ellipse.center.y, ellipse.a, ellipse.b);
     }
+
+
 
     renderBitmapString(10, glutGet(GLUT_WINDOW_HEIGHT) - 20, GLUT_BITMAP_HELVETICA_18, mode.c_str());
 
@@ -97,6 +104,24 @@ void menuFunc(int value) {
     }
 }
 
+void keyboardFunc(unsigned char key, int x, int y) {
+    if (key == 'p') {
+        if (iKeyPointNum == 0) {
+            iKeyPointNum = 1;
+            mode = "Select the starting point of the line segment";
+        }
+        //else if (iKeyPointNum == 1) {
+        //    iKeyPointNum = 2;
+        //    mode = "Select the ending point of the line segment";
+        //}
+        else if (iKeyPointNum == 2) {
+            iKeyPointNum = 0;
+            mode = "Right click to select a graph type";
+        }
+    }
+    glutPostRedisplay();
+}
+
 void mouse(int button, int state, int x, int y) {
     if (button == GLUT_RIGHT_BUTTON && state == GLUT_DOWN) {
         // Create a menu
@@ -106,31 +131,39 @@ void mouse(int button, int state, int x, int y) {
         glutAttachMenu(GLUT_RIGHT_BUTTON);
     }
     else if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN && menuStatus == 1) {
-        startX = endX = x;
-        startY = endY = y;
+        startPoint.x = endPoint.x = x;
+        startPoint.y = endPoint.y = y;
         //printf("%d,%d",x,y);
         drawing = true;
         mode = "hold SHIFT and draw the graph for a circle";
     }
     else if (button == GLUT_LEFT_BUTTON && state == GLUT_UP && menuStatus == 1) {
         drawing = false;
-        int width = abs(endX - startX);
-        int height = abs(endY - startY);
-        ellipses.push_back({ (startX + endX) / 2, (startY + endY) / 2, width / 2, height / 2 });
-        startX = 0; startY = 0; endX = 0; endY = 0;
+        int width = abs(endPoint.x - startPoint.x);
+        int height = abs(endPoint.y - startPoint.y);
+        Point center = Point((startPoint.x + endPoint.x) / 2, (startPoint.y + endPoint.y) / 2);
+        ellipses.push_back({ center, width / 2, height / 2 });
+        endPoint.x = 0; endPoint.y = 0; startPoint.x = 0; startPoint.y = 0;
         mode = "ellipses";
         glutPostRedisplay();
+    }
+    else if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN && iKeyPointNum == 1) {
+        xKey = x; yKey = y;
+    }
+    else if (button == GLUT_LEFT_BUTTON && state == GLUT_UP && iKeyPointNum == 1) {
+        xKey = 0; yKey = 0;
+        iKeyPointNum == 2;
     }
 }
 
 void motion(int x, int y) {
     if (drawing) {
-        endX = x;
-        endY = y;
+        endPoint.x = x;
+        endPoint.y = y;
         glutPostRedisplay();
         // If Shift is pressed, make it a circle
         if (glutGetModifiers() == GLUT_ACTIVE_SHIFT) {
-            endY = startY + abs(endX-startX);
+            endPoint.y = startPoint.y + abs(endPoint.x - startPoint.x);
             /*printf("shift");*/
         }
     }
@@ -150,6 +183,8 @@ int main(int argc, char** argv) {
     glutDisplayFunc(display);
     glutMouseFunc(mouse);
     glutMotionFunc(motion);
+
+    glutKeyboardFunc(keyboardFunc);
 
     glutMainLoop();
 
