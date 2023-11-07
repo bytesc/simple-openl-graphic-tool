@@ -79,6 +79,8 @@
 
 `Visual Studio 2022` 配置 `OpenGL` 所需相关资源和指南（转载非原创）在 `conf` 文件夹内。
 
+`conf/Exported.vssettings` 文件为导出的visual-studio配置
+
 ## 项目结构
 
 ```txt
@@ -95,6 +97,13 @@
 │  simple-openl-graphic-tool.vcxproj
 │  simple-openl-graphic-tool.vcxproj.filters
 │  simple-openl-graphic-tool.vcxproj.user
+│
+├─conf
+│      conf.pdf  # 配置指南
+│      Exported.vssettings # 导出的visual-studio配置
+│      glad.zip
+│      glfw-3.3.8.bin.WIN64.zip
+│      glutdlls37beta.zip
 │
 ├─packages
 ├─readme_img
@@ -150,6 +159,16 @@
 
 ![](./readme_img/conf1.png)
 ![](./readme_img/conf2.png)
+
+也可从`conf/Exported.vssettings` 导入的visual-studio配置
+
+![](./readme_img/conf3.png)
+![](./readme_img/conf4.png)
+
+点击`浏览` 找到并选择 `conf/Exported.vssettings` 
+
+![](./readme_img/conf5.png)
+![](./readme_img/conf6.png)
 
 # 开源许可证
 
