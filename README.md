@@ -10,6 +10,17 @@
 
 🔔 如有项目相关问题，欢迎在本项目提出`issue`，我一般会在 24 小时内回复。
 
+### 源代码
+
+`C++` 源代码文件。如果在 `visual studio 2022` 以外的其它 `OpenGL` 环境运行，使用以下代码文件即可。
+```txt
+│  simple-openl-graphic-tool.cpp   # 主要源代码文件，项目入口
+│  lineClipping.cpp  # Liang-Barsky 算法
+│  lineClipping.h 
+│  onMidPointEllispe.cpp # Bresenham 算法
+│  onMidPointEllispe.h
+```
+
 ## 页面展示
 
 ### Liang-Barsky 算法裁剪折线
