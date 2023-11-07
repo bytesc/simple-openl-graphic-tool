@@ -79,10 +79,24 @@
 
 `Visual Studio 2022` 配置 `OpenGL` 所需相关资源和指南（转载非原创）在 `conf` 文件夹内。
 
-`conf/Exported.vssettings` 文件为导出的visual-studio配置
+`conf/Exported.vssettings` 文件为导出的 visual studio 配置
 
 ## 项目结构
 
+### 源代码
+
+`C++` 源代码文件。如果在 `visual studio 2022` 以外的其它 `OpenGL` 环境运行，使用以下代码文件即可。
+```txt
+│  simple-openl-graphic-tool.cpp   # 主要源代码文件，项目入口
+│  lineClipping.cpp  # Liang-Barsky 算法
+│  lineClipping.h 
+│  onMidPointEllispe.cpp # Bresenham 算法
+│  onMidPointEllispe.h
+```
+
+### vs 工程目录
+
+`visual studio 2022` 工程目录
 ```txt
 │  .gitignore
 │  LICENSE
