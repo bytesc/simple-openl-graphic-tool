@@ -51,7 +51,41 @@ void drawBezierCurve(vector<Point> &points,color &c){
 	glEvalMesh1(GL_LINE, 0, 100);//绘制Bezier曲线
 }
 //通过（m×3+1）控制点，绘制m段n-1次ezier曲线段 
-void drawBezierCurve(vector<Point> &points,int n,color &c){	
+//void drawBezierCurve(vector<Point> &points,int n,color &c){	
+//
+//}
+//通过（m×3+1）控制点，绘制m段n-1次Bezier曲线段 
+void drawBezierCurve(vector<Point>& points, int n, color& c) {
+	int m = points.size() / 2; // 计算有多少段曲线
+	vector<Point> curvePoints;
+	curvePoints.push_back(points[0]);
+	curvePoints.push_back(points[1]);
+	curvePoints.push_back({ (points[1].x + points[2].x) / 2,
+			(points[1].y + points[2].y) / 2 });
+	drawBezierCurve(curvePoints, c);
+	curvePoints.clear();
+	int i = 1;
+	for ( i = 1; i < m; i++) {
+		if (i * 2 + 2 >= points.size()) {
+			break;
+		}
+		vector<Point> curvePoints; // 提取每段曲线的控制点
+		curvePoints.push_back({ (points[i * 2].x + points[i * 2 -1].x) / 2,
+			(points[i * 2].y + points[i * 2 -1].y) / 2 });
+		curvePoints.push_back(points[i * 2]);
+		curvePoints.push_back(points[i * 2 + 1]);
+		curvePoints.push_back({(points[i * 2 + 1].x + points[i * 2 + 2].x) / 2,
+			(points[i * 2 + 1].y + points[i * 2 + 2].y) / 2 });
+		drawBezierCurve(curvePoints, c); // 使用已有的函数绘制每段曲线
+	}
+	i--;
+	curvePoints.push_back({ (points[i * 2 + 1].x + points[i * 2 + 2].x) / 2,
+			(points[i * 2 + 1].y + points[i * 2 + 2].y) / 2 });
+	for (int j = i * 2 + 2; j < points.size(); j++) {
+		curvePoints.push_back(points[j]);
+	}
+	drawBezierCurve(curvePoints, c);
 }
- 
+
+
  

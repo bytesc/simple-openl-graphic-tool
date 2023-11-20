@@ -25,9 +25,13 @@ struct Line {
 
 std::vector<struct Line> lines;
 
-std::vector<point> curveLines;
-
 struct Color globalColor(255,0,0);
+
+vector <point> pointVertex;   //控制多边形顶点序列
+bool isEnd = false;			  //标识控制多边形是否确定
+const GLint ControlN = 4;       //由4个控制点定义三次bezier曲线段
+color redColor(1, 0, 0), blackColor(0, 0, 0);//红色、黑色
+
 
 std::string mode = "Right click to select a graph type";
 
@@ -123,6 +127,21 @@ void display() {
         }
     }
 
+    if (isEnd == false) {
+        glLineStipple(1, 0x00FF);
+        glEnable(GL_LINE_STIPPLE);
+        /*drawPolygonalLine(pointVertex, redColor);*/
+        drawPolygonalLine(pointVertex, endPoint, redColor);
+        glDisable(GL_LINE_STIPPLE);
+    }
+    else {
+        /*drawBezierCurve(pointVertex, redColor);*/
+        drawBezierCurve(pointVertex, ControlN, redColor);
+        glEnable(GL_LINE_STIPPLE);
+        drawPolygonalLine(pointVertex, endPoint, redColor);
+        glDisable(GL_LINE_STIPPLE);
+    }
+
     for (const auto& ellipse : ellipses) {
         drawEllipse(ellipse.center.x, ellipse.center.y, ellipse.a, ellipse.b);
     }
@@ -131,8 +150,8 @@ void display() {
         drawLine(line.start.x, line.start.y, line.end.x, line.end.y);
     }
 
-    drawPolygonalLine(curveLines, globalColor);
     
+
     renderBitmapString(10, glutGet(GLUT_WINDOW_HEIGHT) - 20, GLUT_BITMAP_HELVETICA_18, mode.c_str());
 
     glutSwapBuffers();
@@ -151,7 +170,7 @@ void menuFunc(int value) {
         glutPostRedisplay();
     }
     if (value == 4) {
-
+        isEnd = false;
         menuStatus = 4;
         mode = "Left click to set a point";
         glutPostRedisplay();
@@ -159,6 +178,7 @@ void menuFunc(int value) {
     if (value == 99) {
         ellipses.clear();
         lines.clear();
+        pointVertex.clear();
         menuStatus = 0;
         mode = "Right click to select a graph type";
         glutPostRedisplay();
@@ -196,7 +216,10 @@ void keyboardFunc(unsigned char key, int x, int y) {
         }
     }
     if (menuStatus == 4) {
-
+        if (key == 'e' || key == 'E') {
+            isEnd = true;
+            glutPostRedisplay();
+        }
     }
     glutPostRedisplay();
 }
@@ -266,7 +289,26 @@ void mouse(int button, int state, int x, int y) {
     }
 
     if (menuStatus == 4) {
-
+        if (isEnd == false) {
+            if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
+                drawing = true;
+                endPoint.x = x;
+                endPoint.y = y;
+                if (pointVertex.size() == 0) {
+                    startPoint.x = x; startPoint.y = y;
+                    pointVertex.push_back({ x,y });
+                }
+                mode = "press \"E\" to end (should input in ENGLISH rather than CHINESE)";
+            }
+            else if (button == GLUT_LEFT_BUTTON && state == GLUT_UP && drawing) {
+                drawing = false;
+                point end = point(endPoint.x, endPoint.y);
+                point start = point(startPoint.x, startPoint.y);
+                pointVertex.push_back(end);
+                startPoint.x = endPoint.x; startPoint.y = endPoint.y;
+                glutPostRedisplay();
+            }
+        }
     }
 }
 
