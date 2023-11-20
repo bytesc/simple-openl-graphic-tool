@@ -2,9 +2,14 @@
 #include <cmath>
 #include<string>
 # define M_PI 3.14159
+#include"graphicType.h"
 
 #include"onMidPointEllispe.cpp"
 #include"lineClipping.cpp"
+
+
+#include"drawBezier.h"
+#include"drawBezier.cpp"
 
 
 struct Ellipse {
@@ -20,12 +25,12 @@ struct Line {
 
 std::vector<struct Line> lines;
 
-struct Color {
+struct LineColor {
     int r = 255;
     int g=0, b=0;
 };
 
-struct Color globalColor;
+struct LineColor globalColor;
 
 std::string mode = "Right click to select a graph type";
 

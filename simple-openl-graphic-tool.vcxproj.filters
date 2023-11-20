@@ -24,6 +24,9 @@
     <ClCompile Include="lineClipping.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="drawBezier.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -33,6 +36,12 @@
       <Filter>源文件</Filter>
     </ClInclude>
     <ClInclude Include="lineClipping.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="drawBezier.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="graphicType.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>
