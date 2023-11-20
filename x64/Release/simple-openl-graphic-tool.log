@@ -1,34 +1,48 @@
 ﻿  simple-openl-graphic-tool.cpp
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\onMidPointEllispe.cpp(12,9): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\onMidPointEllispe.cpp(27,17): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\onMidPointEllispe.cpp(27,15): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\onMidPointEllispe.cpp(28,18): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\onMidPointEllispe.cpp(28,15): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\onMidPointEllispe.cpp(29,18): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\onMidPointEllispe.cpp(29,15): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\onMidPointEllispe.cpp(30,17): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\onMidPointEllispe.cpp(30,15): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\onMidPointEllispe.cpp(32,41): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\onMidPointEllispe.cpp(43,17): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\onMidPointEllispe.cpp(43,15): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\onMidPointEllispe.cpp(44,18): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\onMidPointEllispe.cpp(44,15): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\onMidPointEllispe.cpp(45,18): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\onMidPointEllispe.cpp(45,15): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\onMidPointEllispe.cpp(46,17): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\onMidPointEllispe.cpp(46,15): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\lineClipping.cpp(37,10): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\lineClipping.cpp(37,23): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(50,56): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(50,41): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(50,26): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(87,56): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(87,41): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(87,26): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(132,56): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\onMidPointEllispe.cpp(12,9): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\onMidPointEllispe.cpp(27,17): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\onMidPointEllispe.cpp(27,15): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\onMidPointEllispe.cpp(28,18): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\onMidPointEllispe.cpp(28,15): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\onMidPointEllispe.cpp(29,18): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\onMidPointEllispe.cpp(29,15): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\onMidPointEllispe.cpp(30,17): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\onMidPointEllispe.cpp(30,15): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\onMidPointEllispe.cpp(32,41): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\onMidPointEllispe.cpp(43,17): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\onMidPointEllispe.cpp(43,15): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\onMidPointEllispe.cpp(44,18): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\onMidPointEllispe.cpp(44,15): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\onMidPointEllispe.cpp(45,18): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\onMidPointEllispe.cpp(45,15): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\onMidPointEllispe.cpp(46,17): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\onMidPointEllispe.cpp(46,15): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\lineClipping.cpp(37,10): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\lineClipping.cpp(37,23): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(7,23): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(7,18): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(7,13): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(16,23): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(16,18): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(16,13): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(27,29): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(31,28): warning C4244: “=”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(32,28): warning C4244: “=”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(38,28): warning C4244: “=”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(39,28): warning C4244: “=”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(43,23): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(43,18): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(43,13): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(55,56): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(55,41): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(55,26): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(92,56): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(92,41): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(92,26): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(137,56): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
   正在生成代码
-  2 of 233 functions ( 0.9%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
+  227 of 233 functions (97.4%) were compiled, the rest were copied from previous compilation.
+    8 functions were new in current compilation
     1 functions had inline decision re-evaluated but remain unchanged
   已完成代码的生成
-  simple-openl-graphic-tool.vcxproj -> D:\ECUST\5semester\computer_graphics\ex2\simple-openl-graphic-tool\x64\Release\simple-openl-graphic-tool.exe
+  simple-openl-graphic-tool.vcxproj -> D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\x64\Release\simple-openl-graphic-tool.exe
