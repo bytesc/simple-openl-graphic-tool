@@ -32,17 +32,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="onMidPointEllispe.h">
-      <Filter>源文件</Filter>
+    <ClInclude Include="drawBezier.h">
+      <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="lineClipping.h">
-      <Filter>源文件</Filter>
-    </ClInclude>
-    <ClInclude Include="drawBezier.h">
-      <Filter>源文件</Filter>
+      <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="graphicType.h">
-      <Filter>源文件</Filter>
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="onMidPointEllispe.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
