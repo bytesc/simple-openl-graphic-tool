@@ -34,11 +34,24 @@ D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cp
 D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(43,18): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
 D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(43,13): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
 D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(59,27): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(93,23): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(93,18): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(93,13): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(96,27): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(97,11): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(105,13): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(106,13): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(107,13): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(108,13): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(113,35): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(113,32): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(120,20): warning C4244: “参数”: 从“const int”转换到“GLfloat”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\drawBezier.cpp(120,15): warning C4244: “参数”: 从“const int”转换到“GLfloat”，可能丢失数据
 D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(56,56): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
 D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(56,41): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
 D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(56,26): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
 D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(93,56): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
 D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(93,41): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
 D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(93,26): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(155,56): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\simple-openl-graphic-tool.cpp(174,56): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
   simple-openl-graphic-tool.vcxproj -> D:\ECUST\5semester\computer_graphics\ex4\simple-openl-graphic-tool\x64\Debug\simple-openl-graphic-tool.exe

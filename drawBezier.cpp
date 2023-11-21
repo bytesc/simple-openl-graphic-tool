@@ -88,4 +88,38 @@ void drawBezierCurve(vector<Point>& points, int n, color& c) {
 }
 
 
- 
+void drawBSplineCurve(const vector<point>& points, int ControlN, color& c)
+{
+	glColor3f(c.r, c.g, c.b);
+	int caiyang = 10; 
+	vector<point> curvePoints;
+	int n = points.size() - 1;
+	float dt = 1.0 / caiyang;
+	for (int i = 2; i < n; i++)
+	{
+		for (float t = 0; t <= 1; t += dt)
+		{
+			float t2 = t * t;
+			float t3 = t2 * t;
+
+			float b0 = (1 - t) * (1 - t) * (1 - t) / 6.0;
+			float b1 = (3 * t3 - 6 * t2 + 4) / 6.0;
+			float b2 = (-3 * t3 + 3 * t2 + 3 * t + 1) / 6.0;
+			float b3 = t3 / 6.0;
+
+			float x = b0 * points[i - 2].x + b1 * points[i - 1].x + b2 * points[i].x + b3 * points[i + 1].x;
+			float y = b0 * points[i - 2].y + b1 * points[i - 1].y + b2 * points[i].y + b3 * points[i + 1].y;
+
+			curvePoints.push_back(point(x, y));
+		}
+	}
+
+	glBegin(GL_LINE_STRIP);
+	for (const auto& p : curvePoints)
+	{
+		glVertex2f(p.x, p.y);
+	}
+	glEnd();
+
+	//glFlush(); 
+}

@@ -127,20 +127,39 @@ void display() {
         }
     }
 
-    if (isEnd == false) {
-        glLineStipple(1, 0x00FF);
-        glEnable(GL_LINE_STIPPLE);
-        /*drawPolygonalLine(pointVertex, redColor);*/
-        drawPolygonalLine(pointVertex, endPoint, redColor);
-        glDisable(GL_LINE_STIPPLE);
+    if (menuStatus == 4) {
+        if (isEnd == false) {
+            glLineStipple(1, 0x00FF);
+            glEnable(GL_LINE_STIPPLE);
+            /*drawPolygonalLine(pointVertex, redColor);*/
+            drawPolygonalLine(pointVertex, endPoint, redColor);
+            glDisable(GL_LINE_STIPPLE);
+        }else
+        {
+            /*drawBezierCurve(pointVertex, redColor);*/
+            drawBezierCurve(pointVertex, ControlN, redColor);
+            glEnable(GL_LINE_STIPPLE);
+            drawPolygonalLine(pointVertex, endPoint, redColor);
+            glDisable(GL_LINE_STIPPLE);
+        }
     }
-    else {
-        /*drawBezierCurve(pointVertex, redColor);*/
-        drawBezierCurve(pointVertex, ControlN, redColor);
-        glEnable(GL_LINE_STIPPLE);
-        drawPolygonalLine(pointVertex, endPoint, redColor);
-        glDisable(GL_LINE_STIPPLE);
+
+    if (menuStatus == 5) {
+        if (isEnd == false) {
+            glLineStipple(1, 0x00FF);
+            glEnable(GL_LINE_STIPPLE);
+            drawPolygonalLine(pointVertex, endPoint, redColor);
+            glDisable(GL_LINE_STIPPLE);
+        }
+        else
+        {
+            drawBSplineCurve(pointVertex, ControlN, redColor);
+            glEnable(GL_LINE_STIPPLE);
+            drawPolygonalLine(pointVertex, endPoint, redColor);
+            glDisable(GL_LINE_STIPPLE);
+        }
     }
+
 
     for (const auto& ellipse : ellipses) {
         drawEllipse(ellipse.center.x, ellipse.center.y, ellipse.a, ellipse.b);
@@ -172,6 +191,12 @@ void menuFunc(int value) {
     if (value == 4) {
         isEnd = false;
         menuStatus = 4;
+        mode = "Left click to set a point";
+        glutPostRedisplay();
+    }
+    if (value == 5) {
+        isEnd = false;
+        menuStatus = 5;
         mode = "Left click to set a point";
         glutPostRedisplay();
     }
@@ -215,7 +240,7 @@ void keyboardFunc(unsigned char key, int x, int y) {
             }
         }
     }
-    if (menuStatus == 4) {
+    if (menuStatus == 4 || menuStatus == 5) {
         if (key == 'e' || key == 'E') {
             isEnd = true;
             glutPostRedisplay();
@@ -230,7 +255,8 @@ void mouse(int button, int state, int x, int y) {
         int menu = glutCreateMenu(menuFunc);
         glutAddMenuEntry("Ellipse", 1);
         glutAddMenuEntry("Line", 2);
-        glutAddMenuEntry("Curve", 4);
+        glutAddMenuEntry("BezierCurve", 4);
+        glutAddMenuEntry("BSplineCurve", 5);
         glutAddMenuEntry("Clear", 99);
         glutAttachMenu(GLUT_RIGHT_BUTTON);
     }
@@ -288,7 +314,7 @@ void mouse(int button, int state, int x, int y) {
         }
     }
 
-    if (menuStatus == 4) {
+    if (menuStatus == 4 or menuStatus == 5) {
         if (isEnd == false) {
             if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
                 drawing = true;
